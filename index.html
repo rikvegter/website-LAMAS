@@ -52,15 +52,15 @@
       <h3>Epoch 0</h3>
         At epoch 0 neither agent A nor agent B know &phi;. The Kripke model for epoch 0 is shown in Figure XXX This model shows that both agents consider worlds where they do or do not know &phi;. They also both consider worlds where the other agent does or does not know &phi;. The fact that the agents consider these worlds is a direct result of (A5). Informally, this means that the agents know that they do not know &phi;. However, this is not a realistic scenario because how can you know that you do not know something in the first place? This is one of the main arguments against the S5-system when dealing with a real-life scenario.
         <br>
-        <img src = "images/epoch_00_2_agents.png" alt="images/epoch_00_2_agents.com" width = "300" height = 200>
+        <img src = "images/epoch_0_correct.png" alt="images/epoch_0_correct.com" width = "300" height = 200>
       <h3>Epoch 1</h3>
         At this point in time, agent A knows &phi;. However, agent B does not know &phi; yet. Agent A knows &phi; but it does not know whether agent B knows &phi;. Therefore agent A loses its relation between $w_1$ and $w_2$ and the Kripke model looks like Figure XXX.
         <br>
-        <img src = "images/epoch_01_2_agents.png" alt="images/epoch_01_2_agents.com" width = "300" height = 200>
+        <img src = "images/epoch_1_corrrect.png" alt="images/epoch_1_corrrect.com" width = "300" height = 200>
       <h3>Epoch 2</h3>
         Agent A has spread Agent A has spread &phi; to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure XXX. to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure XXX.
         <br>
-        <img src = "images/epoch_2_2_agents.png" alt="images/epoch_2_2_agents.com" width = "200" height = 67>
+        <img src = "images/epoch_2_correct.png" alt="images/epoch_2_correct.com" width = "300" height = 200>
     <h2>Measurements</h2>
       As previously mentioned we want to measure how quickly rumour &phi; spreads and when second order shared knowledge is achieved. For the final project we want to compare different social network initializations with each other. More specifically, we want to look at the number of epochs needed for second order shared knowledge for different social network initializations. An example of knowledge spread over time is given in the following graph. These are the results for a run in the above network with 10 agents and a mean number of connections per agent set to 2.
       <br>
