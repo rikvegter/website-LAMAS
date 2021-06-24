@@ -14,19 +14,47 @@
       Paul Veldhuyzen
         <br>
       <img src = "images/socialnetwork.jpg" alt="images/socialnetwork.com" width = "900" height = 600></header>
+      <figcaption></figcaption>
+
+
     <div style="width: 100%; overflow: hidden;">
-    <div style="width:1000px; float: left;">
+      <div style="width:1000px; float: left;">
 
       <br>
       <h2>Introduction</h2>
         Spreading information from human to human plays a significant role in daily human life.  People spread information everyday.  Sometimes we spread information to specific people in our life and sometimes we make an announcementto a broader audience.  The spread of information can shape the public opinion (Galam, 2003) and therefore analyzing how information spread within a community is an interesting and actual topic in research.
+    </div>
+      <div style="margin: left 700px;">
+      </div>
+    </div>
 
+      <div style="width: 100%; overflow: hidden;">
+      <div style="width:1000px; float: left;">
       <h2>Goal of the project</h2>
         In this project we will look at the speed of information spread in different social network structures. Specifically, we will look at how quickly every person in the network knows about the rumour. A more detailed and precise definition of the network will be given in the next section. In this study we will not only look at how fast knowledge spreads within a social network, we will mainly look at the moment when second order shared knowledge is achieved. Second order shared knowledge can be seen as 'Everybody knows that everybody knows &phi;''.
+      </div>
+      <div style="margin: left 700px;">
+    </div>
+    </div>
 
+
+    <div style="width: 100%; overflow: hidden;">
+      <div style="width:1000px; float: left;">
       <h2>Details of the social network</h2>
         We define a social network to consist of N agents. Every agent is connected to at least 1 other agent and at most N-1 agents. Connections between agents are always bidirectional. The simulation starts with an injection of a rumour &phi; in a random agent (which we call agent 0). This happens at epoch 0. This means that after epoch 0, this agent knows &phi;. At epoch 1, agent 0 spreads the rumour to all its neighbors. Two agents are neighbors if they are connected. Not only does an agent spread &phi;, agents also spread the set of agents that know &phi; according to their belief. We call this set of agents M. This will be clarified in the example below.
+      </div>
+      <div style="margin: left 700px;">
+        <figure style="display: inline-block;">
+        <img src = "images/network.png" alt="images/network.com" width = "600" height = 400  style="margin-top: 50px;">
+        <figcaption >Figure 1: Graph representing a social network with 10 nodes representing 10 individuals.</figcaption>
+        <br>
+        </figure>
+      </div>
+    </div>
 
+
+  <div style="width: 100%; overflow: hidden;">
+    <div style="width:1000px; float: left;">
       <h2>Example</h2>
         Consider a fully-connected social network with 4 agents. At epoch 0, a rumour &phi; is injected in the network at agent 1. At epoch 1, agent 1 spreads the rumour to agent 2, 3 and 4. Since agent 1 got the rumour injected, it does not know any other agents that know &phi;. Therefore M is empty. At epoch 2 all agents know &phi;. However, not all agents know that everyone knows &phi;. At epoch 2 three things happen:
         <ul>
@@ -45,34 +73,63 @@
 
         This means that every agent knows &phi; and every agent knows that every agent knows &phi;. In theory we could infinitely repeat this process in order to achieve common knowledge. However, this is not possible to model. Therefore we chose to stop at second order shared knowledge. An example of a state of the network is given in the following picture, here red nodes know the rumour while green nodes do not. Here agent 3 started with the rumour and has now spread this rumour to agents 9 and 8, in the following step the rumour will spread to agents 1, 2, 4, and, 6.
 
-        <br>
-        <img src = "images/network.png" alt="images/network.com" width = "600" height = 400>
 
+      </div>
+      <div style="margin: left 700px;">
+    </div>
+    </div>
+
+
+    <div style="width: 100%; overflow: hidden;">
+      <div style="width:1000px; float: left;">
       <! Now we talk about the Kripke model example>
       <h2>Kripke model of a social network simulation (step by step)</h2>
         In this paragraph we will go through a simple simulation and we will create a Kripke model for every epoch. This walkthrough consists of 2 agents, A and B and rumour &phi;. The two agents are connected and the rumour &phi; is injected in agent A after epoch 0. This Kripke model assumes an S5 systems. This also means that an agent knows that it does not know &phi; (A5) which is an important assumption.
 
         <h3>Epoch 0</h3>
           At epoch 0 neither agent A nor agent B know &phi;. The Kripke model for epoch 0 is shown in Figure XXX This model shows that both agents consider worlds where they do or do not know &phi;. They also both consider worlds where the other agent does or does not know &phi;. The fact that the agents consider these worlds is a direct result of (A5). Informally, this means that the agents know that they do not know &phi;. However, this is not a realistic scenario because how can you know that you do not know something in the first place? This is one of the main arguments against the S5-system when dealing with a real-life scenario.
-          <br>
-          <img src = "images/epoch_0_correct.png" alt="images/epoch_0_correct.com" width = "300" height = 200>
+
         <h3>Epoch 1</h3>
           At this point in time, agent A knows &phi;. However, agent B does not know &phi; yet. Agent A knows &phi; but it does not know whether agent B knows &phi;. Therefore agent A loses its relation between $w_1$ and $w_2$ and the Kripke model looks like Figure XXX.
-          <br>
-          <img src = "images/epoch_1_corrrect.png" alt="images/epoch_1_corrrect.com" width = "300" height = 200>
+
         <h3>Epoch 2</h3>
           Agent A has spread Agent A has spread &phi; to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure XXX. to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure XXX.
+          
+        </div>
+        <div style="margin: left 700px;">
+          <figure style="display: inline-block;">
+          <img src = "images/epoch_0_correct.png" alt="images/epoch_0_correct.com" width = "300" height = 200 style="margin: left 50px; margin-top: 50px;">
+          <figcaption>Figure 2: Kripke model at epoch 0.</figcaption>
           <br>
-          <img src = "images/epoch_2_correct.png" alt="images/epoch_2_correct.com" width = "300" height = 200>
+          <img src = "images/epoch_1_corrrect.png" alt="images/epoch_1_corrrect.com" width = "300" height = 200 style="margin: left 50px;">
+          <figcaption>Figure 3: Kripke model at epoch 1.</figcaption>
+          <br>
+          <img src = "images/epoch_2_correct.png" alt="images/epoch_2_correct.com" width = "300" height = 200 style="margin: left 50px;">
+          <figcaption>Figure 4: Kripke model at epoch 2.</figcaption>
+          <br>
+          </figure>
+        </div>
+      </div>
+
+
+    <div style="width: 100%; overflow: hidden;">
+      <div style="width:1000px; float: left;">
       <h2>Measurements</h2>
         As previously mentioned we want to measure how quickly rumour &phi; spreads and when second order shared knowledge is achieved. For the final project we want to compare different social network initializations with each other. More specifically, we want to look at the number of epochs needed for second order shared knowledge for different social network initializations. An example of knowledge spread over time is given in the following graph. These are the results for a run in the above network with 10 agents and a mean number of connections per agent set to 2.
-        <br>
-        <img src = "images/graph.PNG" alt="images/graph.com" width = "600" height = 400>
+        <!-- Hier meer measurements toevoegen als ze beetje out of balance zijn, e.g. als er rechts een hele lijst staat-->
       </div>
     <div style="margin: left 700px;">
-        <!-- Empty container for possible pictures to the right -->
+      <figure style="display: inline-block;">
+      <!-- Hier meer measurements toevoegen -->
+      <!-- Zodra alle plaatjes erin zitten even de Figure XX in de correcte nummering veranderen. -->
+      <img src = "images/graph.PNG" alt="images/graph.com" width = "600" height = 400>
+      <figcaption>Figure 5: Measurements example</figcaption>
+      <br>
+    </figure>
       </div>
     </div>
+
+
     <div style="width: 100%; overflow: hidden;">
       <div style="width:1000px; float: left;">
         <h2>Discussion</h2>
@@ -152,9 +209,14 @@
         
       </div>
       <div style="margin: left 700px;">
+        <figure style="display: inline-block;">
         <img src = "images/simple_graph_results.png" alt="images/simple_graph_results.com" width = "600" height = 400>
+        <figcaption>Figure XX: the graph representing a simple social network with 5 nodes. Generated with average connectivity of 2.</figcaption>
         <br>
         <img src = "images/simple_graph.png" alt="images/simple_graph.com" width = "600" height = 400>
+        <figcaption>Figure XX: Measurements of simple rumor spread through the network shown in the previous figure.</figcaption>
+        <br>
+        </figure>
       </div>
       
     </div>
