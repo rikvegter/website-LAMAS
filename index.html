@@ -118,15 +118,76 @@
     <div style="width: 100%; overflow: hidden;">
       <div style="width:800px; float: left;" class="text">
       <h2>Measurements</h2>
-        As previously mentioned we want to measure how quickly rumour &phi; spreads and when second order shared knowledge is achieved. For the final project we want to compare different social network initializations with each other. More specifically, we want to look at the number of epochs needed for second order shared knowledge for different social network initializations. An example of knowledge spread over time is given in the following graph. These are the results for a run in the above network with 10 agents and a mean number of connections per agent set to 2.
+        As previously mentioned we want to measure how quickly rumour &phi; spreads and when second order shared knowledge
+        is achieved. For the final project we want to compare different social network initializations with each other.
+        More specifically, we want to look at the number of epochs needed for nth order shared knowledge for different
+        social network initializations. To get more insight into the behaviour of different networks we will now
+        discuss and compare the results of four different experimental runs. Two of these experiments will focus on
+        sparsely connected graph structures, which will resemble a situation in which agents only have direct contact with
+        to a small subset of all agents M. The other two experiments will focus on densely connected graph structure in
+        which every agent is connected to all other agents, or in other words a complete graph.
+
+        <h3>Experiment 1: 10 agents, 5 connections per agent</h3>
+        Experiment one concerns a graph structure with 10 agents in which every agent is connected to 5 other randomly
+        selected agents. We ran the simulation until 8th order shared knowledge was achieved. The results of the simulation can
+        be seen in figure 5. The dotted line shows how many agents (%) know the original rumor at a given time-step, the
+        solid lines represent the orders or shared knowledge. As can be seen from the figure it took exactly 11 time
+        steps for the system to reach 8th order shared knowledge. Furthermore we can see a repeating shape in the solid
+        lines. 1st order shared knowledge goes from 0 percent to 80 percent in one time-step, between t=2 and t=3 after
+        which it reaches 100 percent at t=4. After 1st order shared knowledge has been reached at t=4, the line for
+        2nd order shared knowledge moves from 0 percent to 10 percent between t=4 and t=5, reaching 100 percent at t=6.
+        This exact movement repeats itself up until 8th order shared knowledge.
+
+        <h3>Experiment 2: 50 agents, 5 connections per agent</h3>
+        Experiment two concerns a complete graph consisting of 10 agents, meaning that every agent has exactly one direct
+        connection with every other agent. The results of experiment two can be found in figure 6. If we look at figure
+        6 we can see that it takes exactly 9 time-steps to reach 8th order shared knowledge, which is 2 steps less
+        compared to experiment one. Furthermore, we can also see that the lines are very structured and predictable.
+        It takes exactly one time step to go from nth order shared knowledge to (n+1)th order shared knowledge.
+
+
+        <h3>Experiment 3: 10 agents, 10 connections per agent (complete graph)</h3>
+        Experiment three concerns a sparsely connected graph structure consisting of 50 agents in which every agent is
+        connected to 5 other randomly selected agents. The results of the simulation can be seen in figure 7. If we look
+        at figure 7 we can see that it takes exactly 15 time-steps to reach 8th order shared knowledge. Furthermore, we
+        can see that the lines are more chaotic and less predictable compared to experiments one and two. There seems to
+        be no obvious pattern in the lines.
+
+        <h3>Experiment 4: 50 agents, 50 connections per agent (complete graph)</h3>
+        Experiment four concerns another complete graph consisting of 50 agents. The results of the simulation can be
+        found in figure 8. If we look at figure 8 we again see the same behaviour as we saw in experiment 2. 8th order
+        shared knowledge is reached at time-step 9.
+
+        <h3>Discussion Experiments</h3>
+        We will now discuss the observations made in experiments one to four. We saw that both experiment two and four
+        show very structured and predictable behaviour. This can of course be explained by the fact that these are
+        complete graphs, i.e. every agent has a direct connection to every other agent. This means that they can spread
+        their knowledge to the whole network in one time-step. This graph structure shows behaviour
+        reminiscent of the public announcements discussed during the lectures.
+
+        In experiment one we also saw fairly predictable behaviour, which can be explained by the small amount of agent
+        which leads to a relative densely connected graph, since every agent is connected to 5 other agents, which is 50
+        percent of the entire network. This leads to a network structure in which information propagates quickly and
+        does not have to travel far, resulting in predictable behaviour. In experiment four we saw more unpredictable
+        lines, which can be explained by the fact that the networks consisted of 50 agents in which every agent is connected
+        to 5 other agents, which is just 10 percent of the entire network. This leads to a more complex flow of information, i.e.
+        less predictable lines.
+
+
         <!-- Hier meer measurements toevoegen als ze beetje out of balance zijn, e.g. als er rechts een hele lijst staat-->
       </div>
     <div style="margin: left 700px;">
       <figure style="display: inline-block;">
       <!-- Hier meer measurements toevoegen -->
       <!-- Zodra alle plaatjes erin zitten even de Figure XX in de correcte nummering veranderen. -->
-      <img src = "images/graph.PNG" alt="images/graph.com" width = "600" height = 400>
-      <figcaption>Figure 5: Measurements example</figcaption>
+      <img src = "images/c=5_a=10.png" alt="images/c=5_a=10.com" width = "600" height = 400>
+      <figcaption>Figure 5: 10 agents, 5 bidirectional connections per agent</figcaption>
+      <br><img src = "images/complete_a=10.png" alt="images/complete_a=10.com" width = "600" height = 400>
+      <figcaption>Figure 6: 50 agents, 5 bidirectional connections per agent </figcaption>
+      <img src = "images/c=5_a=50.png" alt="images/c=5_a=50.com" width = "600" height = 400>
+      <figcaption>Figure 7: 10 agents, fully connected (complete graph)</figcaption>
+      <br><img src = "images/complete_a=50.png" alt="images/complete_a=50.com" width = "600" height = 400>
+      <figcaption>Figure 8: 50 agents, fully connected (complete graph)</figcaption>
       <br>
     </figure>
       </div>
