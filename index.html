@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-
 <html>
 
-  <body style = "background-color:white;">
+  <body style = "background-color:rgb(255, 201, 130);">
+    
     <header>      
+      <link rel="stylesheet" href="style-file.css">
       <h1>Rumours in Social Networks</h1>
-      Names:
+      <div style="margin: 10px;">
       <br>
       Rik Vegter
         <br>
       Niels Rocholl
         <br>
-      Paul Veldhuyzen
+      Paul Veldhuyzen (s2824213)
         <br>
-      <img src = "images/socialnetwork.jpg" alt="images/socialnetwork.com" width = "900" height = 600></header>
-      <figcaption></figcaption>
-
-
+      </div>
+      <div style="margin: left 700px; overflow: hidden; height: 100px; width: 600px;" class="text">
+        <img src = "images/socialnetwork.jpg" alt="images/socialnetwork.com" width = "600" height = 300>
+        <figcaption></figcaption>
+    </div>
+    </header>
+    <div>
     <div style="width: 100%; overflow: hidden;">
-      <div style="width:1000px; float: left;">
+      <div class="text" style="width:800px; float: left;">
 
       <br>
       <h2>Introduction</h2>
-        Spreading information from human to human plays a significant role in daily human life.  People spread information everyday.  Sometimes we spread information to specific people in our life and sometimes we make an announcementto a broader audience.  The spread of information can shape the public opinion (Galam, 2003) and therefore analyzing how information spread within a community is an interesting and actual topic in research.
+        Spreading information from human to human plays a significant role in daily human life.  People spread information everyday.  Sometimes we spread information to specific people in our life and sometimes we make an announcementto a broader audience.  The spread of information can shape the public opinion (Galam, 2003) and therefore analyzing how information spreads within a community is an interesting and a present-day topic in research.
     </div>
       <div style="margin: left 700px;">
       </div>
     </div>
 
       <div style="width: 100%; overflow: hidden;">
-      <div style="width:1000px; float: left;">
+      <div style="width:800px; float: left;" class="text">
       <h2>Goal of the project</h2>
-        In this project we will look at the speed of information spread in different social network structures. Specifically, we will look at how quickly every person in the network knows about the rumour. A more detailed and precise definition of the network will be given in the next section. In this study we will not only look at how fast knowledge spreads within a social network, we will mainly look at the moment when second order shared knowledge is achieved. Second order shared knowledge can be seen as 'Everybody knows that everybody knows &phi;''.
+        In this project we will look at the speed of spreading information in different social network structures. Specifically, we will look at how quickly every person in the network knows about a rumour that is injected into a network. A more detailed and precise definition of the network will be given in the next section. In this study we will not only look at how fast knowledge spreads within a social network, we will also look at when nth order shared knowledge is achieved. Subsequently we will see if any interesting patterns arise and whether we can generalize our findings. Moreover, to better understand the workings of the network we will look at a stepwise example of a Kripke model that describes epochs in a simple sopcial network.
       </div>
       <div style="margin: left 700px;">
     </div>
@@ -39,9 +43,9 @@
 
 
     <div style="width: 100%; overflow: hidden;">
-      <div style="width:1000px; float: left;">
+      <div style="width:800px; float: left;" class="text">
       <h2>Details of the social network</h2>
-        We define a social network to consist of N agents. Every agent is connected to at least 1 other agent and at most N-1 agents. Connections between agents are always bidirectional. The simulation starts with an injection of a rumour &phi; in a random agent (which we call agent 0). This happens at epoch 0. This means that after epoch 0, this agent knows &phi;. At epoch 1, agent 0 spreads the rumour to all its neighbors. Two agents are neighbors if they are connected. Not only does an agent spread &phi;, agents also spread the set of agents that know &phi; according to their belief. We call this set of agents M. This will be clarified in the example below.
+        We define a social network to consist of N agents. The number of connections an agent has is randomly selected around a mean with the constraints, that every agent has a mininmum of one connection and a maximum of N-1 connections. Connections between agents are always bidirectional. The simulation starts with an injection of a rumour &phi; in a random agent (which we call agent 0). This happens at epoch 0. This means that after epoch 0, this agent knows &phi;. At epoch 1, agent 0 spreads the rumour to all its neighbors. Two agents are neighbors if they are connected. Not only does an agent spread &phi;, agents also spread the set of agents that know &phi; according to their belief. We call this set of agents M. This will be clarified in the example below.
       </div>
       <div style="margin: left 700px;">
         <figure style="display: inline-block;">
@@ -54,7 +58,7 @@
 
 
   <div style="width: 100%; overflow: hidden;">
-    <div style="width:1000px; float: left;">
+    <div style="width:800px; float: left;" class="text">
       <h2>Example</h2>
         Consider a fully-connected social network with 4 agents. At epoch 0, a rumour &phi; is injected in the network at agent 1. At epoch 1, agent 1 spreads the rumour to agent 2, 3 and 4. Since agent 1 got the rumour injected, it does not know any other agents that know &phi;. Therefore M is empty. At epoch 2 all agents know &phi;. However, not all agents know that everyone knows &phi;. At epoch 2 three things happen:
         <ul>
@@ -81,20 +85,19 @@
 
 
     <div style="width: 100%; overflow: hidden;">
-      <div style="width:1000px; float: left;">
+      <div style="width:800px; float: left;" class="text">
       <! Now we talk about the Kripke model example>
       <h2>Kripke model of a social network simulation (step by step)</h2>
         In this paragraph we will go through a simple simulation and we will create a Kripke model for every epoch. This walkthrough consists of 2 agents, A and B and rumour &phi;. The two agents are connected and the rumour &phi; is injected in agent A after epoch 0. This Kripke model assumes an S5 systems. This also means that an agent knows that it does not know &phi; (A5) which is an important assumption.
 
         <h3>Epoch 0</h3>
-          At epoch 0 neither agent A nor agent B know &phi;. The Kripke model for epoch 0 is shown in Figure XXX This model shows that both agents consider worlds where they do or do not know &phi;. They also both consider worlds where the other agent does or does not know &phi;. The fact that the agents consider these worlds is a direct result of (A5). Informally, this means that the agents know that they do not know &phi;. However, this is not a realistic scenario because how can you know that you do not know something in the first place? This is one of the main arguments against the S5-system when dealing with a real-life scenario.
+          At epoch 0 neither agent A nor agent B know &phi;. The Kripke model for epoch 0 is shown in Figure 2 This model shows that both agents consider worlds where they do or do not know &phi;. They also both consider worlds where the other agent does or does not know &phi;. The fact that the agents consider these worlds is a direct result of (A5). Informally, this means that the agents know that they do not know &phi;. However, this is not a realistic scenario because how can you know that you do not know something in the first place? This is one of the main arguments against the S5-system when dealing with a real-life scenario.
 
         <h3>Epoch 1</h3>
-          At this point in time, agent A knows &phi;. However, agent B does not know &phi; yet. Agent A knows &phi; but it does not know whether agent B knows &phi;. Therefore agent A loses its relation between $w_1$ and $w_2$ and the Kripke model looks like Figure XXX.
+          At this point in time, agent A knows &phi;. However, agent B does not know &phi; yet. Agent A knows &phi; but it does not know whether agent B knows &phi;. Therefore agent A loses its relation between w<sub>1</sub> and w<sub>2</sub> and the Kripke model looks like Figure 3.
 
         <h3>Epoch 2</h3>
-          Agent A has spread Agent A has spread &phi; to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure XXX. to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure XXX.
-          
+          Agent A has spread Agent A has spread &phi; to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure 4.           
         </div>
         <div style="margin: left 700px;">
           <figure style="display: inline-block;">
@@ -113,7 +116,7 @@
 
 
     <div style="width: 100%; overflow: hidden;">
-      <div style="width:1000px; float: left;">
+      <div style="width:800px; float: left;" class="text">
       <h2>Measurements</h2>
         As previously mentioned we want to measure how quickly rumour &phi; spreads and when second order shared knowledge is achieved. For the final project we want to compare different social network initializations with each other. More specifically, we want to look at the number of epochs needed for second order shared knowledge for different social network initializations. An example of knowledge spread over time is given in the following graph. These are the results for a run in the above network with 10 agents and a mean number of connections per agent set to 2.
         <!-- Hier meer measurements toevoegen als ze beetje out of balance zijn, e.g. als er rechts een hele lijst staat-->
@@ -131,8 +134,10 @@
 
 
     <div style="width: 100%; overflow: hidden;">
-      <div style="width:1000px; float: left;">
+      <div style="width:800px; float: left;" class="text">
         <h2>Discussion</h2>
+
+        <h3>Understanding the Network Dynamics</h3>
         The results of the experiment show that the first orders of shared knowledge take longer to spread than higher orders of shared knowledge with respect to the first inception of K&phi; or E<sub>i</sub>&phi;. For all levels of connectivity and all network sizes the same pattern seems to arise, although spreading is slower in when networks are more sparsely connected.
         In order to explain how this is happening we will look at a simple network shown in the figure to the right. The graph shows the corresponding results. In this particular run the rumor &phi; was injected at node 1. The following shows how the knowledge of all 5 nodes are updated while running. We will remove lists of K<sub>i</sub>&phi; or K<sub>i</sub>EK&phi; as soon has we can conlude a higher order shared knowledge in order to prevent an exponential growing mess, they will be there implicitly. For simplicity we will leave out any possible inferences that are not relevant for shared knowledge.
         <h4>Step 1</h4>
@@ -205,7 +210,18 @@
 
         These first 7 steps of this simple network with 5 nodes show what explains the behaviour (i.e. the accelarated spread of higher orders of shared knowledge). The spread of the original rumor &phi; looks almost linear, it goes from node to node, and sometimes two nodes at the same time. But the meta knowledge about who knows &phi; already starts spreading back into the network before everybody knows &phi;. Which results in first order knowledge already being concluded at three different nodes in the same time step. Now the knowledge about EK&phi; spreads from three points at once. Which results in EK&phi; conclusions spreading faster through the network once the first EK&phi; is concluded. An analogy for this is dropping a pebble in a bucket (rumor injection), the waves spread evenly through the bucket (spreading K&phi;) but once they bounce against the walls they start coming back and meeting one another (combining K<sub>i</sub>&phi; lists into conclusions).
 
+        <h3>Patterns</h3>
+        As is clear by now our main observations was the rapid spread of higher order knowledge. As we were first working on the project we thought it might be possible to determine the time it would take to reach nth order shared knowledge. However, we quickly determined that this is highly dependent on the specific network. Nonetheless we are able to deduce some key boundaries.
+        <ul>
+          <li> The time it takes for every agent to know &phi; is given by the diameter (D) of the network
+          <li> The the lower bound of time it takes for a network of size n to achieve ith order shared knowledge of &phi; is: 
+            <br>
+            E(i) = E(i - 1) + 2log(n/E(i - 1)).
+            With E(0) = D, which represents the spread of initial knowledge. 
+          <li> The upper bound of time it takes for a network of size n to achieve ith order shared knowledge of &phi; is i*n.
+        </ul>
 
+        
         
       </div>
       <div style="margin: left 700px;">
@@ -220,11 +236,17 @@
       </div>
       
     </div>
-    <h1>References</h1>
-      Galam, S. (2003). Modelling rumors: the no plane Pentagon French hoax case. Physica A: Statistical Mechanics and Its Applications, 320, 571-580.
-  ISO 690
 
-  
+    <div style="width: 100%; overflow: hidden;">
+      <div style="width:800px; float: left;" class="ref">
+      <h1>References</h1>
+        Galam, S. (2003). Modelling rumors: the no plane Pentagon French hoax case. Physica A: Statistical Mechanics and Its Applications, 320, 571-580.
+    ISO 690
+      </div>
+    </div>
+
+
+  </div>
   </body>
 
 </html>
