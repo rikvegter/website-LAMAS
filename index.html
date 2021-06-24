@@ -68,15 +68,100 @@
         As previously mentioned we want to measure how quickly rumour &phi; spreads and when second order shared knowledge is achieved. For the final project we want to compare different social network initializations with each other. More specifically, we want to look at the number of epochs needed for second order shared knowledge for different social network initializations. An example of knowledge spread over time is given in the following graph. These are the results for a run in the above network with 10 agents and a mean number of connections per agent set to 2.
         <br>
         <img src = "images/graph.PNG" alt="images/graph.com" width = "600" height = 400>
+      </div>
+    <div style="margin: left 700px;">
+        <!-- Empty container for possible pictures to the right -->
+      </div>
+    </div>
+    <div style="width: 100%; overflow: hidden;">
+      <div style="width:1000px; float: left;">
+        <h2>Discussion</h2>
+        The results of the experiment show that the first orders of shared knowledge take longer to spread than higher orders of shared knowledge with respect to the first inception of K&phi; or E<sub>i</sub>&phi;. For all levels of connectivity and all network sizes the same pattern seems to arise, although spreading is slower in when networks are more sparsely connected.
+        In order to explain how this is happening we will look at a simple network shown in the figure to the right. The graph shows the corresponding results. In this particular run the rumor &phi; was injected at node 1. The following shows how the knowledge of all 5 nodes are updated while running. We will remove lists of K<sub>i</sub>&phi; or K<sub>i</sub>EK&phi; as soon has we can conlude a higher order shared knowledge in order to prevent an exponential growing mess, they will be there implicitly. For simplicity we will leave out any possible inferences that are not relevant for shared knowledge.
+        <h4>Step 1</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>&phi;
+          <li>
+          <li> 
+          <li>
+          <li>
+        </ul>
+        <h4>Step 2</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi;
+          <li> K<sub>2</sub>&phi; &and; K<sub>1</sub>&phi;
+          <li> 
+          <li>
+          <li>
+        </ul>
+        <h4>Step 3</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi;
+          <li> K<sub>2</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi;
+          <li> K<sub>3</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi;
+          <li> K<sub>4</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi;
+          <li> 
+        </ul>
+        <h4>Step 4</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi;
+          <li> K<sub>2</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi;
+          <li> K<sub>3</sub>EK&phi; &and; K<sub>3</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi; &and; K<sub>4</sub>&phi; &and; K<sub>5</sub>&phi;
+          <li> K<sub>4</sub>EK&phi; &and; K<sub>4</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>5</sub>&phi;
+          <li> K<sub>5</sub>EK&phi; &and; K<sub>5</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi;
+        </ul>
+        <h4>Step 5</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi;
+          <li> K<sub>2</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>2</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi; &and; K<sub>5</sub>&phi;
+          <li> K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>5</sub>EK&phi; -- Conclude EK&phi;
+          <li> K<sub>4</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>5</sub>EK&phi; -- Conclude EK&phi;
+          <li> K<sub>5</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; -- Conclude EK&phi;
+        </ul>
 
-      <h1>References</h1>
+        <h4>Step 5</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi; &and; K<sub>5</sub>&phi;
+          <li> K<sub>2</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>5</sub>EK&phi;  -- Conclude EK&phi;
+          <li> K<sub>3</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>5</sub>EK&phi;
+          <li> K<sub>4</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>5</sub>EK&phi; &and; K<sub>5</sub>EK&phi;
+          <li> K<sub>5</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi;
+        </ul>
+
+        <h4>Step 6</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>5</sub>EK&phi;  -- Conclude EK&phi;
+          <li> K<sub>2</sub>EK&phi; &and; K<sub>1</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>5</sub>EK&phi;
+          <li> K<sub>3</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>5</sub>EK&phi;
+          <li> K<sub>4</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>5</sub>EK&phi; &and; K<sub>5</sub>EK&phi;
+          <li> K<sub>5</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>2</sub>EK&phi;
+        </ul>
+
+        <h4>Step 7</h4>
+        <ul style="list-style-type: decimal">
+          <li> K<sub>1</sub>EEK&phi; -- Conclude EEK&phi;
+          <li> K<sub>2</sub>EEK&phi; -- Conclude EEK&phi;
+          <li> K<sub>3</sub>EK&phi; &and; K<sub>1</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>5</sub>EK&phi;
+          <li> K<sub>4</sub>EK&phi; &and; K<sub>1</sub>EK&phi; &and; K<sub>2</sub>EK&phi; &and; K<sub>5</sub>EK&phi; &and; K<sub>5</sub>EK&phi;
+          <li> K<sub>5</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>2</sub>EK&phi;
+        </ul>
+
+        These first 7 steps of this simple network with 5 nodes show what explains the behaviour (i.e. the accelarated spread of higher orders of shared knowledge). The spread of the original rumor &phi; looks almost linear, it goes from node to node, and sometimes two nodes at the same time. But the meta knowledge about who knows &phi; already starts spreading back into the network before everybody knows &phi;. Which results in first order knowledge already being concluded at three different nodes in the same time step. Now the knowledge about EK&phi; spreads from three points at once. Which results in EK&phi; conclusions spreading faster through the network once the first EK&phi; is concluded. An analogy for this is dropping a pebble in a bucket (rumor injection), the waves spread evenly through the bucket (spreading K&phi;) but once they bounce against the walls they start coming back and meeting one another (combining K<sub>i</sub>&phi; lists into conclusions).
+
+
+        
+      </div>
+      <div style="margin: left 700px;">
+        <img src = "images/simple_graph_results.png" alt="images/simple_graph_results.com" width = "600" height = 400>
+        <br>
+        <img src = "images/simple_graph.png" alt="images/simple_graph.com" width = "600" height = 400>
+      </div>
+      
+    </div>
+    <h1>References</h1>
       Galam, S. (2003). Modelling rumors: the no plane Pentagon French hoax case. Physica A: Statistical Mechanics and Its Applications, 320, 571-580.
   ISO 690
-    </div>
-    <div style="margin: left 700px;">
-      <!-- Empty container for possible pictures to the right -->
-    </div>
-  </div>
+
   
   </body>
 
