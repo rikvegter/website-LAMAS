@@ -2,8 +2,8 @@
 <html>
 
   <body style = "background-color:rgb(255, 201, 130);">
-    
-    <header>      
+
+    <header>
       <link rel="stylesheet" href="style-file.css">
       <h1>Rumours in Social Networks</h1>
       <div style="margin: 10px;">
@@ -12,7 +12,7 @@
         <br>
       Niels Rocholl
         <br>
-      Paul Veldhuyzen (s2824213)
+      Paul Veldhuyzen
         <br>
       </div>
       <div style="margin: left 700px; overflow: hidden; height: 100px; width: 600px;" class="text">
@@ -26,7 +26,7 @@
 
       <br>
       <h2>Introduction</h2>
-        Spreading information from human to human plays a significant role in daily human life.  People spread information everyday.  Sometimes we spread information to specific people in our life and sometimes we make an announcementto a broader audience.  The spread of information can shape the public opinion (Galam, 2003) and therefore analyzing how information spreads within a community is an interesting and a present-day topic in research.
+        Spreading information from human to human plays a significant role in daily human life.  People spread information everyday.  Sometimes we spread information to specific people in our life and sometimes we make an announcement to a broader audience.  The spread of information can shape the public opinion (Galam, 2003) and therefore analyzing how information spreads within a community is an interesting and a present-day topic in research.
     </div>
       <div style="margin: left 700px;">
       </div>
@@ -35,7 +35,7 @@
       <div style="width: 100%; overflow: hidden;">
       <div style="width:800px; float: left;" class="text">
       <h2>Goal of the project</h2>
-        In this project we will look at the speed of spreading information in different social network structures. Specifically, we will look at how quickly every person in the network knows about a rumour that is injected into a network. A more detailed and precise definition of the network will be given in the next section. In this study we will not only look at how fast knowledge spreads within a social network, we will also look at when nth order shared knowledge is achieved. Subsequently we will see if any interesting patterns arise and whether we can generalize our findings. Moreover, to better understand the workings of the network we will look at a stepwise example of a Kripke model that describes epochs in a simple sopcial network.
+        In this project we will look at the speed of spreading information in different social network structures. Specifically, we will look at how quickly every person in the network knows about a rumour that is injected into a network. A more detailed and precise definition of the network will be given in the next section. In this study we will not only look at how fast knowledge spreads within a social network, we will also look at when nth order shared knowledge is achieved. Subsequently we will see if any interesting patterns arise and whether we can generalize our findings. Moreover, to better understand the workings of the network we will look at a stepwise example of a Kripke model that describes epochs in a simple social network.
       </div>
       <div style="margin: left 700px;">
     </div>
@@ -75,7 +75,7 @@
             <li> Agent 4: &phi;, M = {agent 1, agent 2, agent 3, agent 4}
         </ul>
 
-        This means that every agent knows &phi; and every agent knows that every agent knows &phi;. In theory we could infinitely repeat this process in order to achieve common knowledge. However, this is not possible to model. Therefore we chose to stop at second order shared knowledge. An example of a state of the network is given in the following picture, here red nodes know the rumour while green nodes do not. Here agent 3 started with the rumour and has now spread this rumour to agents 9 and 8, in the following step the rumour will spread to agents 1, 2, 4, and, 6.
+        This means that every agent knows &phi; and every agent knows that every agent knows &phi;. An example of a state of the network is given in Figure 1, here red nodes know the rumour while green nodes do not. Here agent 3 started with the rumour and has now spread this rumour to agents 9 and 8, in the following step the rumour will spread to agents 1, 2, 4, and, 6.
 
 
       </div>
@@ -97,18 +97,18 @@
           At this point in time, agent A knows &phi;. However, agent B does not know &phi; yet. Agent A knows &phi; but it does not know whether agent B knows &phi;. Therefore agent A loses its relation between w<sub>1</sub> and w<sub>2</sub> and the Kripke model looks like Figure 3.
 
         <h3>Epoch 2</h3>
-          Agent A has spread Agent A has spread &phi; to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure 4.           
+          Agent A has spread Agent A has spread &phi; to all its neighbours, which is agent B. Because agent A told &phi; to agent B, now all agents know &phi;. Since agent A told agent B &phi;, K<sub>A</sub>K<sub>B</sub>&phi;. Since agent B heard &phi; from agent A, K<sub>B</sub>K<sub>A</sub>&phi;. This can also be proven from the Kripke model shown in Figure 4.
         </div>
         <div style="margin: left 700px;">
           <figure style="display: inline-block;">
           <img src = "images/epoch_0_correct.png" alt="images/epoch_0_correct.com" width = "300" height = 200 style="margin: left 50px; margin-top: 50px;">
-          <figcaption>Figure 2: Kripke model at epoch 0.</figcaption>
+          <figcaption>Figure 2: Kripke model at epoch 0. Note that reflexive relations are left out</figcaption>
           <br>
           <img src = "images/epoch_1_corrrect.png" alt="images/epoch_1_corrrect.com" width = "300" height = 200 style="margin: left 50px;">
-          <figcaption>Figure 3: Kripke model at epoch 1.</figcaption>
+          <figcaption>Figure 3: Kripke model at epoch 1. Note that reflexive relations are left out. </figcaption>
           <br>
           <img src = "images/epoch_2_correct.png" alt="images/epoch_2_correct.com" width = "300" height = 200 style="margin: left 50px;">
-          <figcaption>Figure 4: Kripke model at epoch 2.</figcaption>
+          <figcaption>Figure 4: Kripke model at epoch 2. Note that reflexive relations are left out. </figcaption>
           <br>
           </figure>
         </div>
@@ -196,16 +196,16 @@
 
     <div style="width: 100%; overflow: hidden;">
       <div style="width:800px; float: left;" class="text">
-        <h2>Discussion</h2>
+        <h2>Diving Deeper</h2>
 
         <h3>Understanding the Network Dynamics</h3>
         The results of the experiment show that the first orders of shared knowledge take longer to spread than higher orders of shared knowledge with respect to the first inception of K&phi; or E<sub>i</sub>&phi;. For all levels of connectivity and all network sizes the same pattern seems to arise, although spreading is slower in when networks are more sparsely connected.
-        In order to explain how this is happening we will look at a simple network shown in the figure to the right. The graph shows the corresponding results. In this particular run the rumor &phi; was injected at node 1. The following shows how the knowledge of all 5 nodes are updated while running. We will remove lists of K<sub>i</sub>&phi; or K<sub>i</sub>EK&phi; as soon has we can conlude a higher order shared knowledge in order to prevent an exponential growing mess, they will be there implicitly. For simplicity we will leave out any possible inferences that are not relevant for shared knowledge.
+        In order to explain how this is happening we will look at a simple network shown in Figure 10. The graph in Figure 9 shows the corresponding results. In this particular run the rumor &phi; was injected at node 1. The following steps show how the knowledge of all 5 nodes updates while running. We will remove lists of K<sub>i</sub>&phi; or K<sub>i</sub>EK&phi; as soon as an agent can conlude a higher order shared knowledge in order to prevent an exponential growing mess. But that knowledge is there will be there implicitly through EK. For simplicity we will leave out any possible inferences that are not relevant for shared knowledge.
         <h4>Step 1</h4>
         <ul style="list-style-type: decimal">
           <li> K<sub>1</sub>&phi;
           <li>
-          <li> 
+          <li>
           <li>
           <li>
         </ul>
@@ -213,7 +213,7 @@
         <ul style="list-style-type: decimal">
           <li> K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi;
           <li> K<sub>2</sub>&phi; &and; K<sub>1</sub>&phi;
-          <li> 
+          <li>
           <li>
           <li>
         </ul>
@@ -223,7 +223,7 @@
           <li> K<sub>2</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>3</sub>&phi; &and; K<sub>4</sub>&phi;
           <li> K<sub>3</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi;
           <li> K<sub>4</sub>&phi; &and; K<sub>1</sub>&phi; &and; K<sub>2</sub>&phi;
-          <li> 
+          <li>
         </ul>
         <h4>Step 4</h4>
         <ul style="list-style-type: decimal">
@@ -269,21 +269,20 @@
           <li> K<sub>5</sub>EK&phi; &and; K<sub>3</sub>EK&phi; &and; K<sub>4</sub>EK&phi; &and; K<sub>2</sub>EK&phi;
         </ul>
 
-        These first 7 steps of this simple network with 5 nodes show what explains the behaviour (i.e. the accelarated spread of higher orders of shared knowledge). The spread of the original rumor &phi; looks almost linear, it goes from node to node, and sometimes two nodes at the same time. But the meta knowledge about who knows &phi; already starts spreading back into the network before everybody knows &phi;. Which results in first order knowledge already being concluded at three different nodes in the same time step. Now the knowledge about EK&phi; spreads from three points at once. Which results in EK&phi; conclusions spreading faster through the network once the first EK&phi; is concluded. An analogy for this is dropping a pebble in a bucket (rumor injection), the waves spread evenly through the bucket (spreading K&phi;) but once they bounce against the walls they start coming back and meeting one another (combining K<sub>i</sub>&phi; lists into conclusions).
+        These first 7 steps of this simple network with 5 nodes show what explains the behaviour (i.e. the accelarated spread of higher orders of shared knowledge). The spread of the original rumor &phi; looks almost linear, it goes from node to node, and sometimes two nodes at the same time. But the meta knowledge about who knows &phi; already starts spreading back into the network before everybody knows &phi;. Which results in first order knowledge already being concluded at three different nodes in the same time step. Now the knowledge about EK&phi; spreads from three points at once. Spreading from three points at the same time results in EK&phi; conclusions spreading faster through the network once the first EK&phi; is concluded. An analogy for this is dropping a pebble in a bucket (rumor injection), the ripples spread evenly through the bucket (spreading K&phi;) but once they bounce against the walls they start coming back and meeting one another (combining K<sub>i</sub>&phi; lists into conclusions).
 
         <h3>Patterns</h3>
-        As is clear by now our main observations was the rapid spread of higher order knowledge. As we were first working on the project we thought it might be possible to determine the time it would take to reach nth order shared knowledge. However, we quickly determined that this is highly dependent on the specific network. Nonetheless we are able to deduce some key boundaries.
+        As is clear by now our main observations was the rapid spread of higher order knowledge. When we started the porject we thought it might be possible to determine the time it would take to reach ith order shared knowledge given the network size and diameter. However, we quickly determined that this is highly dependent on the specific network. Nonetheless we are able to deduce some key boundaries for the time it takes to reach ith order shared knowledge.
         <ul>
           <li> The time it takes for every agent to know &phi; is given by the diameter (D) of the network
-          <li> The the lower bound of time it takes for a network of size n to achieve ith order shared knowledge of &phi; is: 
+          <li> The the lower bound of time it takes for a network of size n to achieve ith order shared knowledge of &phi; is:
             <br>
             E(i) = E(i - 1) + 2log(n/E(i - 1)).
-            With E(0) = D, which represents the spread of initial knowledge. 
+            With E(0) = D, which represents the spread of initial knowledge.
           <li> The upper bound of time it takes for a network of size n to achieve ith order shared knowledge of &phi; is i*n.
         </ul>
 
-        
-        
+
       </div>
       <div style="margin: left 700px;">
         <figure style="display: inline-block;">
@@ -295,8 +294,21 @@
         <br>
         </figure>
       </div>
-      
+
     </div>
+      
+     
+        <div style="width: 100%; overflow: hidden;">
+          <div class="text" style="width:800px; float: left;">
+
+
+          <br>
+          <h2>Code for the simulations</h2>
+            The code for this project can be found <a href="https://github.com/nielsRocholl/LAMAS">here</a>. One can run the simulations by typing python Graph.py.
+        </div>
+          <div style="margin: left 700px;">
+          </div>
+        </div>
 
     <div style="width: 100%; overflow: hidden;">
       <div style="width:800px; float: left;" class="ref">
@@ -308,6 +320,10 @@
 
 
   </div>
+
+
+
+
   </body>
 
 </html>
